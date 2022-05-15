@@ -26,16 +26,13 @@ jobs:
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v2.4.13
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.80.0'
           extended: true
-    
-        #- name: checkout # 步骤的名称
-        #uses: actions/checkout@v2.3.4 #软件市场的名称
-        #with: # 参数
-        #submodules: true
-        
+
+        #  - name: Build
+       # run: hugo -D     
       - name: Build
         run: hugo --minify
         
