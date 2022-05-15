@@ -42,12 +42,12 @@ jobs:
       - name: Build
         run: hugo --minify
         
-        
+      
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          EXTERNAL_REPOSITORY: pakeypay/pakeypay.github.io
-          PUBLISH_BRANCH: main
-          PUBLISH_DIR: ./public
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: username/external-repository
+          publish_branch: main  # default: gh-pages
+          publish_dir: ./public
 
